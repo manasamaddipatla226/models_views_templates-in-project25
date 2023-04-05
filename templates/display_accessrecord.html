@@ -14,12 +14,16 @@
 
     <table border="3px;"  style="padding: 12px;">
         <tr>
+            <th style="background-color: red; color:ghostwhite; padding:12px;">Name</th>
             <th style="background-color: red; color:ghostwhite; padding:12px;">Author</th>
+            <th style="background-color: red; color:ghostwhite; padding:12px;">Date</th>
         </tr>
 
     {% for a in accessrecord %}
         <tr>
+            <td style="background-color: blue; color:ghostwhite;text-align:center; padding:15px;">{{a.name}}</td>
             <td style="background-color: blue; color:ghostwhite;text-align:center; padding:15px;">{{a.author}}</td>
+            <td style="background-color: blue; color:ghostwhite;text-align:center; padding:15px;">{{a.date}}</td>
         </tr>
     {% endfor %}
 

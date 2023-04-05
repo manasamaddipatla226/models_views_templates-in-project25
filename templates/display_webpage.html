@@ -13,12 +13,18 @@
         </h1>
         <table border="3px" style="padding: 10px; color:blueviolet;">
             <tr>
+                <th style="padding: 8px; color:black;">topic_name</th>
                 <th style="padding: 8px; color:black;">name</th>
+                <th style="padding: 8px; color:black;">url</th>
+                <th style="padding: 8px; color:black;">email</th>
             </tr>
 
         {% for w in webpages %}
         <tr>
+            <td style="padding: 8px; text-align:center">{{w.topic_name}}</td>
             <td style="padding: 8px; text-align:center">{{w.name}}</td>
+            <td style="padding: 8px; text-align:center">{{w.url}}</td>
+            <td style="padding: 8px; text-align:center">{{w.email}}</td>
         </tr>
         {% endfor %}
         </table>
