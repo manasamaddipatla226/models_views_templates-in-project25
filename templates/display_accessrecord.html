@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1 style="color: purple;">
+            AccessRecord
+        </h1>
+
+    <table border="3px;"  style="padding: 12px;">
+        <tr>
+            <th style="background-color: red; color:ghostwhite; padding:12px;">Author</th>
+        </tr>
+
+    {% for a in accessrecord %}
+        <tr>
+            <td style="background-color: blue; color:ghostwhite;text-align:center; padding:15px;">{{a.author}}</td>
+        </tr>
+    {% endfor %}
+
+    </table>
+    </center>
+</body>
+</html>
