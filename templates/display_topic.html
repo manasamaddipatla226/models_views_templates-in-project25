@@ -9,14 +9,14 @@
 <body>
     <center>
         <h1 style="color: blue;">Display_Topic</h1>
-    <table border="5px" style="padding: 10px;">
+    <table border="5px" style="padding: 10px; color:antiquewhite;color:black;">
         <tr>
             <th style="padding: 5px;">topic_name</th>
         </tr>
 
         {% for i in topics %}
         <tr>
-            <td style="padding: 3px;">{{i.topic_name}}</td>
+            <td style="padding: 3px; color:ghostwhite; background-color:orangered; text-align:center;">{{i.topic_name}}</td>
         </tr>
         {% endfor %}
 
