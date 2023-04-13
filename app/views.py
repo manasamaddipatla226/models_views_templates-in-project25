@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from app.models import *
 from django.db.models.functions import Length
+from django.db.models import Q
+
 
 # Create your views here.
 def display_topic(request):
@@ -42,3 +44,27 @@ def display_accessrecord(request):
     LOA=AccessRecord.objects.all()
     d={'accessrecord':LOA}
     return render(request,'display_accessrecord.html',context=d)
+
+
+def update_webpage(request):
+    #Webpage.objects.filter(name='dhoni').update(email='dhoni@gmail.in')
+
+    #Webpage.objects.filter(topic_name='cricket').update(email='MSD@gmail.com')
+    #Webpage.objects.filter(name='Zehra').update(topic_name='chess')
+    #Webpage.objects.update_or_create(email='MSD@gmail.com',defaults={'name':'MSD'})
+    TO=Topic.objects.get_or_create(topic_name='cricket')[0]
+    TO.save()
+    Webpage.objects.update_or_create(name='pandya',defaults={'topic_name':TO,'url':'https://hardik.com','email':'hardik@gmail.com'})
+    d={'webpage':Webpage.objects.all()}
+    return render(request,'dispaly_webpage.html',d)
+
+
+
+def delete_webpage(request):
+    #Webpage.objects.filter(name='kohli').delete()
+    #Webpage.objects.filter(name='hardik').delete()
+    #Webpage.objects.filter(email='MSD@gmail.com').delete()
+    Webpage.objects.all().delete()
+    d={'webpage':Webpage.objects.all()}
+
+    return render(request,'display_webpage.html',d)
